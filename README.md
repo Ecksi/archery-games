@@ -1,29 +1,5 @@
-# archery-games
+# ![logo](./src/assets/logo.png) <span style="float:right;margin-top:55px;">Archery Games League Tracking App</span>
 
-## Project setup
-```
-npm install
-```
+### A small application to make life easier for the folks over at https://archerygamesdenver.com/
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### This application will allow for easier team management, creation, and match tracking for their league sessions.
