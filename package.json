@@ -1,6 +1,7 @@
 {
   "name": "archery-games",
   "version": "0.1.0",
+  "author": "Jim Ecksi <jimecksi@gmail.com> (https://github.com/Ecksi)",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
