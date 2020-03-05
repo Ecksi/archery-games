@@ -9,6 +9,26 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/start',
+    name: 'Start',
+    component: () => import('../components/pages/StartMatch.vue')
+  },
+  {
+    path: '/schedule',
+    name: 'Schedule',
+    component: () => import('../components/pages/Schedule.vue')
+  },
+  {
+    path: '/teams',
+    name: 'Teams',
+    component: () => import('../components/pages/Teams.vue')
+  },
+  {
+    path: '/players',
+    name: 'Players',
+    component: () => import('../components/pages/Players.vue')
   }
 ]
 
