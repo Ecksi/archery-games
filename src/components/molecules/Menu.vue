@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section v-for="(menu, index) in isAdmin ? admin : user" :key="index">
+    <section v-for="(menu, index) in isAdmin ? admin : user" :key="index" @click="$emit('changeRoute', menu.img)">
       <menu-option :asset="menu.img">{{ menu.text }}</menu-option>
     </section>
   </div>
