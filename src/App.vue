@@ -1,6 +1,8 @@
 <template>
   <div>
-    <ag-header>Denver</ag-header>
+    <router-link to="/">
+      <ag-header>Denver</ag-header>
+    </router-link>
     <router-view />
   </div>
 </template>
