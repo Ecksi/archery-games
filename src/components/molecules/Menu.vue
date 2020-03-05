@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section v-for="(menu, index) in menus" :key="index">
+    <section v-for="(menu, index) in isAdmin ? admin : user" :key="index">
       <menu-option :asset="menu.img">{{ menu.text }}</menu-option>
     </section>
   </div>
@@ -10,19 +10,32 @@
   import MenuOption from '../atoms/MenuOption';
   
   export default {
-    name: 'AdminMenu',
+    name: 'Menu',
     components: {
       MenuOption
     },
+    props: {
+      isAdmin: {
+        type: Boolean,
+        default: false
+      }
+    },
     data() {
       return {
-        menus: [
+        admin: [
           {'img': 'start', 'text': 'Start a match'},
           {'img': 'schedule', 'text': 'Schedule'},
           {'img': 'teams', 'text': 'Teams'},
           {'img': 'players', 'text': 'Players'},
           {'img': 'past-seasons', 'text': 'Past Seasons'},
           {'img': 'team-builder', 'text': 'Team Builder'},
+          {'img': 'contact', 'text': 'Contact'}
+        ],
+        user: [
+          {'img': 'schedule', 'text': 'Schedule'},
+          {'img': 'teams', 'text': 'Teams'},
+          {'img': 'players', 'text': 'Players'},
+          {'img': 'past-seasons', 'text': 'Past Seasons'},
           {'img': 'contact', 'text': 'Contact'}
         ]
       }

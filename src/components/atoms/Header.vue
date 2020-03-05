@@ -1,10 +1,15 @@
 <template>
   <header class="header">
-    <img class="header__logo" src="../../assets/logo.png" alt="Archery Games logo" width="75" height="75">
-    <div class="header__title">
-      <h2><slot></slot> <span>League</span></h2>
-      <img src="../../assets/menus/target.svg" alt="A target with an arrow in the center" width="50">
-    </div>
+    <a href="https://archerygamesdenver.com/">
+      <img class="header__logo" src="../../assets/logo.png" alt="Archery Games logo" width="75" height="75">
+    </a>
+    <!-- This href will link back to this app -->
+    <a href="">
+      <div class="header__title">
+        <h2><slot></slot> <span>League</span></h2>
+        <img src="../../assets/menus/target.svg" alt="A target with an arrow in the center" width="50">
+      </div>
+    </a>
   </header>
 </template>
 
@@ -15,6 +20,10 @@
 </script>
 
 <style scoped>
+  a, a:visited {
+    color: #111;
+  }
+
   .header {
     display: flex;
     justify-content: space-between;

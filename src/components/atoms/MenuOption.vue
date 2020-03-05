@@ -15,13 +15,14 @@
 				required: true
 			}
 		}
-	}
+	};
 </script>
 
 <style scoped>
   section {
     display: flex;
     padding: 1.5rem;
+		cursor: pointer;
   }
 
 	section:hover {
