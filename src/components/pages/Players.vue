@@ -1,10 +1,10 @@
 <template>
-  <h1>Welcome to the schedule page</h1>
+  <h1>Players List</h1>  
 </template>
 
 <script>
   export default {
-    name: 'Schedule'
+    name: 'Players'
   }
 </script>
 
