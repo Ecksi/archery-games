@@ -1,32 +1,19 @@
 <template>
   <div class="start">
     <section class="team-scores split h-full">
-      <!-- Replace X's with dynamic score boxes that start at 0 -->
-      <div>
-        <h1>Team A Name</h1>
-        <span>X</span>
-      </div>
-      <div>
-        <h1>Team A Name</h1>
-        <span>X</span>
-      </div>
+      <!-- limit chars to 24 -->
+      <team-score>Knocked Out</team-score>
+      <team-score>Test for long team namesa</team-score>
     </section>
     <section class="award-points split h-full">
       <!-- On push/click point is awarded to the winning team -->
-      <div>
-        <h1>award winner</h1>
-        <img class="winner" src="../../assets/img/winner.svg" alt="A gold medal" height="50" width="50">
-      </div>
-      <div>
-        <h1>award winner</h1>
-        <img class="winner" src="../../assets/img/winner.svg" alt="A gold medal" height="50" width="50">
-      </div>
+      <award-points></award-points>
+      <award-points></award-points>
     </section>
     <section class="match-info center h-full">
+        <!-- Call store for round data  -->
       <h3 class="round">- Round X -</h3>
       <div class="current-round">
-        <!-- This should be able to cycle between the 9 rounds -->
-        <!-- Should this be only 1 way? -->
         <paginate>Jailbreak</paginate>
       </div>
     </section>
@@ -40,11 +27,17 @@
 </template>
 
 <script>
+  import TeamScore from '@/components/atoms/TeamScore';
+  import AwardPoints from  '@/components/atoms/AwardPoints';
   import Paginate from '@/components/atoms/Paginate';
 
   export default {
     name: 'StartMatch',
-    components: { Paginate }
+    components: { 
+      TeamScore,
+      AwardPoints,
+      Paginate
+    }
   }
 </script>
 
@@ -76,10 +69,6 @@
     text-align: center;
   }
 
-  .winner {
-    margin-top: 24px;
-  }
-
   .round {
     margin-top: 24px;
     margin-bottom: 16px;
@@ -106,7 +95,7 @@
     outline: none;
     font-size: 24px;
     font-weight: bold;
-    color: #CCC;
+    color: #FFF;
     letter-spacing: 2px;
   }
 
