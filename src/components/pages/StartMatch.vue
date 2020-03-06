@@ -1,6 +1,6 @@
 <template>
   <div class="start">
-    <section class="team-scores split">
+    <section class="team-scores split h-full">
       <!-- Replace X's with dynamic score boxes that start at 0 -->
       <div>
         <h1>Team A Name</h1>
@@ -11,37 +11,40 @@
         <span>X</span>
       </div>
     </section>
-    <section class="award-points split">
+    <section class="award-points split h-full">
       <!-- On push/click point is awarded to the winning team -->
       <div>
         <h1>award winner</h1>
-        <img class="winner" src="../../assets/menus/winner.svg" alt="A gold medal" height="50" width="50">
+        <img class="winner" src="../../assets/img/winner.svg" alt="A gold medal" height="50" width="50">
       </div>
       <div>
         <h1>award winner</h1>
-        <img class="winner" src="../../assets/menus/winner.svg" alt="A gold medal" height="50" width="50">
+        <img class="winner" src="../../assets/img/winner.svg" alt="A gold medal" height="50" width="50">
       </div>
     </section>
-    <section class="match-info center">
+    <section class="match-info center h-full">
       <h3 class="round">- Round X -</h3>
       <div class="current-round">
         <!-- This should be able to cycle between the 9 rounds -->
         <!-- Should this be only 1 way? -->
-        <span>&lt;</span>
-        <h1>Jailbreak</h1>
-        <span>&gt;</span>
+        <paginate>Jailbreak</paginate>
       </div>
     </section>
     <section>
       <!-- Add timer functionality -->
-      <button class="start-button">Start</button>
+      <button class="start-button">
+        <span>Start</span>
+      </button>
     </section>
   </div>
 </template>
 
 <script>
+  import Paginate from '@/components/atoms/Paginate';
+
   export default {
-    name: 'StartMatch'
+    name: 'StartMatch',
+    components: { Paginate }
   }
 </script>
 
@@ -50,7 +53,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(100vh - 114px);
+    height: calc(100vh - 129px);
+  }
+
+  .h-full {
+    flex: 1;
   }
 
   .split {
@@ -94,6 +101,16 @@
   .start-button {
     width: 100%;
     height: 70px;
-    background-color: green;
+    background-color: #009B4C;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #CCC;
+    letter-spacing: 2px;
+  }
+
+  .start-button span {
+    filter: drop-shadow(0 2px 1px rgb(58, 58, 58));
   }
 </style>

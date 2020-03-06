@@ -7,7 +7,7 @@
     <a href="">
       <div class="header__title">
         <h2><slot></slot> <span>League</span></h2>
-        <img src="../../assets/menus/target.svg" alt="A target with an arrow in the center" width="50">
+        <img src="../../assets/img/target.svg" alt="A target with an arrow in the center" width="50">
       </div>
     </a>
   </header>
@@ -28,6 +28,7 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 1rem;
+    margin-bottom: 16px;
     border-bottom: 2px solid #333;
   }
 
