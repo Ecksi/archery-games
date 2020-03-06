@@ -30,7 +30,7 @@
     padding: 0;
   }
 
-  html {
+  html, body {
     height: 100%;
   }
 
