@@ -1,6 +1,8 @@
 <template>
   <main>
-    <ag-menu :isAdmin="toggleAdmin" class="main" />
+    <router-link :to="route">
+      <ag-menu :isAdmin="toggleAdmin" @changeRoute="setRoute" class="main" />
+    </router-link>
     <button @click="toggleAdmin = !toggleAdmin" class="toggle">Admin Toggle</button>
   </main>
 </template>
@@ -13,7 +15,13 @@
     components: { AgMenu },
     data() {
       return {
-        toggleAdmin: false
+        toggleAdmin: true,
+        route: ''
+      }
+    },
+    methods: {
+      setRoute: function(route) {
+        this.route = `/${route}`
       }
     }
   };

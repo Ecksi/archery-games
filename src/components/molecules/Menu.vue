@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section v-for="(menu, index) in isAdmin ? admin : user" :key="index">
+    <section v-for="(menu, index) in isAdmin ? admin : user" :key="index" @click="$emit('changeRoute', menu.route)">
       <menu-option :asset="menu.img">{{ menu.text }}</menu-option>
     </section>
   </div>
@@ -23,20 +23,20 @@
     data() {
       return {
         admin: [
-          {'img': 'start', 'text': 'Start a match'},
-          {'img': 'schedule', 'text': 'Schedule'},
-          {'img': 'teams', 'text': 'Teams'},
-          {'img': 'players', 'text': 'Players'},
-          {'img': 'past-seasons', 'text': 'Past Seasons'},
-          {'img': 'team-builder', 'text': 'Team Builder'},
-          {'img': 'contact', 'text': 'Contact'}
+          {'img': 'start', 'text': 'Start a match', 'route': 'start'},
+          {'img': 'schedule', 'text': 'Schedule', 'route': 'schedule'},
+          {'img': 'teams', 'text': 'Teams', 'route': 'teams'},
+          {'img': 'players', 'text': 'Players', 'route': 'players'},
+          {'img': 'past-seasons', 'text': 'Past Seasons', 'route': 'league'},
+          {'img': 'team-builder', 'text': 'Team Builder', 'route': 'team-builder'},
+          {'img': 'contact', 'text': 'Contact', 'route': 'contact'}
         ],
         user: [
-          {'img': 'schedule', 'text': 'Schedule'},
-          {'img': 'teams', 'text': 'Teams'},
-          {'img': 'players', 'text': 'Players'},
-          {'img': 'past-seasons', 'text': 'Past Seasons'},
-          {'img': 'contact', 'text': 'Contact'}
+          {'img': 'schedule', 'text': 'Schedule', 'route': 'schedule'},
+          {'img': 'teams', 'text': 'Teams', 'route': 'teams'},
+          {'img': 'players', 'text': 'Players', 'route': 'players'},
+          {'img': 'past-seasons', 'text': 'Past Seasons', 'route': 'league'},
+          {'img': 'contact', 'text': 'Contact', 'route': 'contact'}
         ]
       }
     }
