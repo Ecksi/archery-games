@@ -1,24 +1,22 @@
 <template>
   <div>
-    <h3 class="round">- Round {{ $store.state.match.round }} -</h3>
+    <h3 class="round" v-if="$store.state.match.round === 10">- Bonus Round -</h3>
+    <h3 class="round" v-else>- Round {{ $store.state.match.round }} -</h3>
     <div class="game-list">
-      <span class="arrow" @click="getPreviousGame">&lt;</span>
-        <h2 class="current-game">{{ $store.state.match.gameList[3] }}</h2>
-      <span class="arrow" @click="getNextGame">&gt;</span>
+      <span class="arrow" @click="previousGame">&lt;</span>
+        <h2 class="current-game">{{ $store.state.match.gameList[$store.state.match.round - 1] }}</h2>
+      <span class="arrow" @click="nextGame">&gt;</span>
     </div>
   </div>
 </template>
 
 <script>
+  import { mapMutations } from 'vuex';
+
   export default {
-    name: 'Paginate',
+    name: 'GameList',
     methods: {
-      getNextGame() {
-        console.log('next Game')
-      },
-      getPreviousGame() {
-        console.log('previous game')
-      }
+      ...mapMutations(['nextGame', 'previousGame'])
     }
   }
 </script>
@@ -42,6 +40,7 @@
 
   .current-game {
     padding-top: 8px;
+    width: 80vw;
     text-align: center;
   }
 </style>

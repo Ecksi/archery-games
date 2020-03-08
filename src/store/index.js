@@ -24,6 +24,23 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    nextGame(state) {
+      state.match.round === state.match.gameList.length
+        ? state.match.round = 1
+        : state.match.round++;
+
+      this.changeGame;
+    },
+    previousGame(state) {
+      state.match.round === 1
+        ? state.match.round = state.match.gameList.length
+        : state.match.round--;
+
+      this.changeGame;
+    },
+    changeGame(state) {
+      state.match.gameList[state.match.round -1]
+    }
   },
   actions: {
   },
