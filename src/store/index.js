@@ -43,6 +43,9 @@ export default new Vuex.Store({
     changeGame(state) {
       state.match.gameList[state.match.round -1]
     },
+    awardPoints(state, team) {
+      state.match[`${team}Score`]++;
+    },
     toggleMatch(state) {
       if (!state.match.isStarted) {
         state.match.isStarted = true;
