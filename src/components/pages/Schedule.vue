@@ -1,6 +1,6 @@
 <template>
   <div class="schedule">
-    <paginate>March 20</paginate>
+    <!-- <paginate>March 20</paginate> -->
     <!-- component times --> 
     <div>
       <h2 class="time">6:30</h2>
@@ -32,11 +32,8 @@
 </template>
 
 <script>
-  import Paginate from '@/components/atoms/Paginate';
-
   export default {
-    name: 'Schedule',
-    components: { Paginate }
+    name: 'Schedule'
   }
 </script>
 
