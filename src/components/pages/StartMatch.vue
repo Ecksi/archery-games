@@ -5,9 +5,7 @@
       <team-score>Knocked Out</team-score>
       <team-score>Test for long team namesa</team-score>
     </section>
-    <section class="award-points split h-full">
-      <!-- On push/click point is awarded to the winning team -->
-      <award-points></award-points>
+    <section class="award-points h-full">
       <award-points></award-points>
     </section>
     <section class="match-info center h-full">
@@ -57,7 +55,6 @@
     display: flex;
     justify-content: space-between;
     height: 150px;
-    border: 1px solid red;
     text-align: center;
   }
 

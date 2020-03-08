@@ -26,7 +26,7 @@
   }
 
 	section:hover {
-		background-color: purple;
+		background-color: rgba(144, 238, 144, 0.2);
 	}
 
 	section h3 {

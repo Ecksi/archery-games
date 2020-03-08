@@ -1,7 +1,7 @@
 <template>
   <main>
     <router-link :to="route">
-      <ag-menu :isAdmin="toggleAdmin" @changeRoute="setRoute" class="main" />
+      <ag-menu :isAdmin="toggleAdmin" @changeRoute="route=`/${$event}`" class="main" />
     </router-link>
     <button @click="toggleAdmin = !toggleAdmin" class="toggle">Admin Toggle</button>
   </main>
@@ -17,11 +17,6 @@
       return {
         toggleAdmin: true,
         route: ''
-      }
-    },
-    methods: {
-      setRoute: function(route) {
-        this.route = `/${route}`
       }
     }
   };
