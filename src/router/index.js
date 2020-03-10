@@ -41,6 +41,11 @@ const routes = [
     component: () => import('../components/pages/TeamBuilder.vue')
   },
   {
+    path: '/rules',
+    name: 'Rules',
+    component: () => import('../components/pages/Rules.vue')
+  },
+  {
     path: '/contact',
     name: 'Contact',
     component: () => import('../components/pages/Contact.vue')
