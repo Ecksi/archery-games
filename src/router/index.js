@@ -16,6 +16,11 @@ const routes = [
     component: () => import('../components/pages/StartMatch.vue')
   },
   {
+    path: '/calendar',
+    name: 'Calendar',
+    component: () => import('../components/pages/Calendar.vue')
+  },
+  {
     path: '/schedule',
     name: 'Schedule',
     component: () => import('../components/pages/Schedule.vue')
