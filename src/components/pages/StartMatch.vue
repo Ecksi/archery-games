@@ -1,9 +1,10 @@
 <template>
   <div class="start">
+    <modal v-if="popUp" @close="popUp=false"/>
     <team-score class="flex-one" />
-    <award-points class="flex-one" />
+    <award-points class="flex-one" @awardWinner="popUp=true" />
     <game-list class="flex-one translate-y" />
-    <match-timer />
+    <match-timer @awardWinner="popUp=true" />
   </div>
 </template>
 
@@ -11,7 +12,8 @@
   import TeamScore from '@/components/atoms/TeamScore';
   import AwardPoints from  '@/components/atoms/AwardPoints';
   import GameList from '@/components/atoms/GameList';
-  import MatchTimer from '@/components/atoms/MatchTimer'
+  import MatchTimer from '@/components/atoms/MatchTimer';
+  import Modal from '@/components/atoms/Modal';
 
   export default {
     name: 'StartMatch',
@@ -19,7 +21,13 @@
       TeamScore,
       AwardPoints,
       GameList,
-      MatchTimer
+      MatchTimer,
+      Modal
+    },
+    data() {
+      return {
+        popUp: false,
+      }
     }
   }
 </script>

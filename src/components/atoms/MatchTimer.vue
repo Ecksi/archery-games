@@ -1,17 +1,25 @@
 <template>
   <button class="start-button" @click="toggleTimer">
     <span v-if="!$store.state.match.isStarted && !$store.state.match.status">Start</span>
-    <span v-else>{{ $store.state.match.status === 'active' ? `Pause - ${$store.state.match.duration}` : `Resume - ${$store.state.match.duration}` }}</span>
+    <span v-else>{{ $store.state.match.status === 'active' ? `Pause - ${duration = $store.state.match.duration}` : `Resume - ${duration = $store.state.match.duration}` }}</span>
   </button>
 </template>
 
 <script>
-  import {mapActions} from 'vuex';
+  import { mapActions } from 'vuex';
 
   export default {
     name: 'MatchTimer',
-    methods: {
-      ...mapActions(['toggleTimer'])
+    data() {
+      return {
+        duration: this.$store.state.match.duration
+      }
+    },
+    methods: { ...mapActions(['toggleTimer']) },
+    watch: {
+      duration: function() {
+        return this.duration === '0:00' ? this.$emit('awardWinner') : 'hi'
+      }
     }
   }
 </script>
