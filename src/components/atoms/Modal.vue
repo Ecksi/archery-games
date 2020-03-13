@@ -3,11 +3,16 @@
     <div class="close" @click="$emit('close')">X</div>
     <h1>I am your Modal</h1>
     <h3>Who won this match?</h3>
-    <section>
-      <h2>Home Team</h2>
-      <h2>Away Team</h2>
-    </section>
-    <img src="../../assets/avatars/avatar-13.svg" alt="" height="50">
+    <div class="teams">
+      <section class="home-team">
+        <h2>Home Team</h2>
+        <img src="../../assets/avatars/avatar-11.svg" alt="" height="50">
+      </section>
+      <section class="away-team">
+        <h2>Away Team</h2>
+        <img src="../../assets/avatars/avatar-13.svg" alt="" height="50">
+      </section>
+    </div>
   </div>  
 </template>
 
@@ -38,6 +43,29 @@
   }
 
   .close {
+    position: relative;
+    top: 8px;
+    left: 112px;
     cursor: pointer;
+  }
+  
+  h1 {
+    margin: 12px 0;
+  }
+
+  .teams {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .home-team {
+    padding-right: 12px;
+    margin-left: 8px;
+  }
+
+  .away-team {
+    padding-left: 12px;
+    margin-right: 8px;
   }
 </style>
