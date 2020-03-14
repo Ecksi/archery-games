@@ -47,44 +47,34 @@ export default new Vuex.Store({
       state.match[`${team}Score`]++;
     },
     toggleMatch(state) {
-      if (!state.match.isStarted) {
-        state.match.isStarted = true;
-        state.match.status = 'active'
-      } else {
-        state.match.isStarted = false;
-        state.match.status = 'paused'
-      }      
+      state.match.isStarted = !state.match.isStarted;
+
+      state.match.isStarted 
+        ? state.match.status = 'active'
+        : state.match.status = 'paused';
     },
     runTimer(state) {
       let minutes = state.match.duration.split(':')[0];
       let seconds = state.match.duration.split(':')[1];
 
-      if (minutes === '0' && seconds === '00') {
-        return;
-      }
-
       if (seconds === '00') {        
         seconds = '59'
         minutes > 0 ? minutes-- : minutes
       } else {
-        if (seconds < 11) {
-          seconds--
-          seconds = `0${seconds}`
-        } else {
-          seconds--
-        }
+        seconds--;
+        if (seconds < 10) seconds = `0${seconds}`
       }
 
-      state.match.duration = `${minutes}:${seconds}`;
+      return state.match.duration = `${minutes}:${seconds}`;
     }
   },
   actions: {
     // Something buggy is going on with this timer when you pause/resume
     toggleTimer({ commit, state }) {
       commit('toggleMatch');
-  
+
       setInterval(() => {
-        !state.match.isStarted || state.match.duration === '0:00'
+        return !state.match.isStarted || state.match.duration === '0:00'
           ? clearInterval()
           : commit('runTimer');
       }, 1000)
