@@ -22,12 +22,12 @@
   export default {
     name: 'Modal',
     methods: { 
-      ...mapMutations(['addPoint', 'nextGame', 'resetGameState']),
+      ...mapMutations(['addPoint', 'nextGame', 'resetMatchState']),
       updateScore(team) {
         // How to break this up to be a bit cleaner?
         this.addPoint(team);
         setTimeout(() => this.$emit('close'), 300);
-        this.resetGameState();
+        this.resetMatchState();
         this.nextGame();
       }
 

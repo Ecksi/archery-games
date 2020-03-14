@@ -17,7 +17,7 @@ export default new Vuex.Store({
       homeTeam: 'Knocked Out',
       homeScore: 0,
       awayTeam: 'Test team for long names',
-      awayScore: 3,
+      awayScore: 0,
       winner: '',
       duration: '0:03',
       isStarted: false,
@@ -44,9 +44,6 @@ export default new Vuex.Store({
     changeGame(state) {
       state.match.gameList[state.match.round -1]
     },
-    awardPoints(state, team) {
-      state.match[`${team}Score`]++;
-    },
     toggleMatch(state) {
       state.match.isStarted = !state.match.isStarted;
 
@@ -68,11 +65,24 @@ export default new Vuex.Store({
 
       return state.match.duration = `${minutes}:${seconds}`;
     },
-    resetGameState(state) {
+    resetMatchState(state) {
       // Have a variable that contains the default start time
       state.match.duration = '4:00';
       state.match.isStarted = false;
       state.match.status = ''
+
+      if (state.match.homeScore + state.match.awayScore == 9) {
+        // What about triggering this call after dog eat dog? 
+        // different modal perhaps? it will allow you to assign a dog eat dog winner, then reset game 
+        this.resetGameState;
+      }
+    },
+    resetGameState(state) {
+      state.match.homeScore = 0;
+      state.match.homeTeam = '';
+      state.match.awayScore = 0;
+      state.match.awayTeam = '';
+      state.match.round = 1;
     },
     addPoint(state, team) {
       team.includes('home') ? state.match.homeScore++ : state.match.awayScore++;
