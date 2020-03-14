@@ -18,11 +18,12 @@ export default new Vuex.Store({
       homeScore: 0,
       awayTeam: 'Test team for long names',
       awayScore: 3,
-      duration: '1:02',
+      winner: '',
+      duration: '0:03',
       isStarted: false,
       status: '',
       round: 1,
-      gameList: ['Elimination', 'Jail Break', 'Headcount', 'Elimination - 2 Barr - Dodgeball', 'Jail Break', 'Elimination - 2 Barr', 'Headcount', 'Team Choice', 'Y.O.L.O.', 'Dog Eat Dog']
+      gameList: ['Elimination', 'Jail Break', 'Headcount', 'Elimination - 2 Barr - Dodgeball', 'Jail Break', 'Elimination - 2 Barr', 'Headcount', 'Team Choice', 'Y.O.L.O.', 'Dog Eat Dog'],
     }
   },
   mutations: {
@@ -66,6 +67,15 @@ export default new Vuex.Store({
       }
 
       return state.match.duration = `${minutes}:${seconds}`;
+    },
+    resetGameState(state) {
+      // Have a variable that contains the default start time
+      state.match.duration = '4:00';
+      state.match.isStarted = false;
+      state.match.status = ''
+    },
+    addPoint(state, team) {
+      team.includes('home') ? state.match.homeScore++ : state.match.awayScore++;
     }
   },
   actions: {
