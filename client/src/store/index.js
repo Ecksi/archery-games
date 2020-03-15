@@ -23,6 +23,12 @@ export default new Vuex.Store({
       status: '',
       round: 1,
       gameList: ['Elimination', 'Jail Break', 'Headcount', 'Elimination - 2 Barr - Dodgeball', 'Jail Break', 'Elimination - 2 Barr', 'Headcount', 'Team Choice', 'Y.O.L.O.', 'Dog Eat Dog'],
+      matchDetails: [{
+        round1: {
+          game: 'Elimination',
+          winner: 'Nocked Out'
+        }
+      }]
     },
     // temporary teams for FE building - these should live in the BE (players too)
     teams: [
