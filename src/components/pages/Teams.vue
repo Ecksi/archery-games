@@ -8,17 +8,19 @@
       <h3 class="table-teams">Team</h3>
       <h3 class="table-points">Points</h3>
     </section>
-    <section v-for="(team, index) in teams" :key="index" class="team" @click="$emit('teamPage', team.name)">
-      <img :src="require(`../../assets/avatars/avatar-${index}.svg`)" alt="" height="50">
-      <section class="team-info">
-        <div>
-          <h3>{{ team.name }}</h3>
-          <h4>{{ team.color }}</h4>
-        </div>
-        <div>
-          <h3>{{ team.points }}</h3>  
-        </div>
-      </section>
+    <section v-for="(team, index) in teams" :key="index">
+      <router-link :to="{ name: 'Team', params: {team: team}}" class="team">
+        <img :src="require(`../../assets/avatars/avatar-${index}.svg`)" alt="" height="50">
+        <section class="team-info">
+          <div>
+            <h3>{{ team.name }}</h3>
+            <h4>{{ team.color }}</h4>
+          </div>
+          <div>
+            <h3>{{ team.points }}</h3>  
+          </div>
+        </section>
+      </router-link>
     </section>
   </div>
 </template>
@@ -63,6 +65,12 @@
     display: flex;
     margin-bottom: 16px;
     cursor: pointer;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .team:hover {
+    background-color: rgba(115, 115, 115, 0.3);
   }
 
   .team img {
