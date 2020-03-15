@@ -31,6 +31,12 @@ const routes = [
     component: () => import('../components/pages/Teams.vue')
   },
   {
+    path: '/team',
+    name: 'Team',
+    props: true,
+    component: () => import('../components/pages/Team.vue')
+  },
+  {
     path: '/players',
     name: 'Players',
     component: () => import('../components/pages/Players.vue')
