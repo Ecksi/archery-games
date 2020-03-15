@@ -31,21 +31,72 @@ export default new Vuex.Store({
         color: 'Black',
         captain: 'Elise St. Peter',
         points: 7,
-        members: []
+        members: [{
+          name: 'David Glasscock',
+          email: '',
+          gender: 'male',
+          shirt: false,
+          shirtSize: null,
+          team: 'Arrow Die Namic',
+          captain: false
+        },
+        {
+          name: 'Elise St. Peter',
+          email: '',
+          gender: 'female',
+          shirt: true,
+          shirtSize: 'Womens Small',
+          team: 'Arrow Die Namic',
+          captain: true
+        }]
       },
       {
         name: 'Iron Grey',
         color: 'Grey',
         captain: 'Jeremy Bronson',
         points: 8,
-        members: [],
+        members: [   {
+          name: 'Ignacio Agguerrevere',
+          email: '',
+          gender: 'male',
+          shirt: true,
+          shirtSize: 'Mens Large',
+          team: 'Iron Grey',
+          captain: false
+        },
+        {
+          name: 'Jeremy Bronson',
+          email: '',
+          gender: 'male',
+          shirt: true,
+          shirtSize: 'Mens Medium',
+          team: 'Iron Grey',
+          captain: true
+        }],
       },
       {
         name: 'Nocked Out',
         color: 'Dark Blue',
         captain: 'Jesse Warlick',
         points: 99,
-        members: [],
+        members: [ {
+          name: 'Jesse Warlick',
+          email: '',
+          gender: 'male',
+          shirt: true,
+          shirtSize: 'Mens Medium',
+          team: 'Nocked Out',
+          captain: true
+        },
+        {
+          name: 'Jim Dechant',
+          email: '',
+          gender: 'male',
+          shirt: false,
+          shirtSize: null,
+          team: 'Knocked Out',
+          captain: false
+        }],
       }
     ],
     players: [
@@ -102,7 +153,7 @@ export default new Vuex.Store({
         shirtSize: null,
         team: 'Knocked Out',
         captain: false
-      },
+      }
     ]
   },
   mutations: {
