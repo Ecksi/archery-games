@@ -12,7 +12,6 @@ export default new Vuex.Store({
       },
       pastSeasons: []
     },
-    players: [],
     match: {
       homeTeam: 'Knocked Out',
       homeScore: 0,
@@ -24,7 +23,87 @@ export default new Vuex.Store({
       status: '',
       round: 1,
       gameList: ['Elimination', 'Jail Break', 'Headcount', 'Elimination - 2 Barr - Dodgeball', 'Jail Break', 'Elimination - 2 Barr', 'Headcount', 'Team Choice', 'Y.O.L.O.', 'Dog Eat Dog'],
-    }
+    },
+    // temporary teams for FE building - these should live in the BE (players too)
+    teams: [
+      {
+        name: 'Arrow Die Namic',
+        color: 'Black',
+        captain: 'Elise St. Peter',
+        points: 7,
+        members: []
+      },
+      {
+        name: 'Iron Grey',
+        color: 'Grey',
+        captain: 'Jeremy Bronson',
+        points: 8,
+        members: [],
+      },
+      {
+        name: 'Nocked Out',
+        color: 'Dark Blue',
+        captain: 'Jesse Warlick',
+        points: 99,
+        members: [],
+      }
+    ],
+    players: [
+      {
+        name: 'David Glasscock',
+        email: '',
+        gender: 'male',
+        shirt: false,
+        shirtSize: null,
+        team: 'Arrow Die Namic',
+        captain: false
+      },
+      {
+        name: 'Elise St. Peter',
+        email: '',
+        gender: 'female',
+        shirt: true,
+        shirtSize: 'Womens Small',
+        team: 'Arrow Die Namic',
+        captain: true
+      },
+      {
+        name: 'Ignacio Agguerrevere',
+        email: '',
+        gender: 'male',
+        shirt: true,
+        shirtSize: 'Mens Large',
+        team: 'Iron Grey',
+        captain: false
+      },
+      {
+        name: 'Jeremy Bronson',
+        email: '',
+        gender: 'male',
+        shirt: true,
+        shirtSize: 'Mens Medium',
+        team: 'Iron Grey',
+        captain: true
+      },
+      {
+        name: 'Jesse Warlick',
+        email: '',
+        gender: 'male',
+        shirt: true,
+        shirtSize: 'Mens Medium',
+        team: 'Nocked Out',
+        captain: true
+      },
+      {
+        name: 'Jim Dechant',
+        email: '',
+        gender: 'male',
+        shirt: false,
+        shirtSize: null,
+        team: 'Knocked Out',
+        captain: false
+      },
+    ]
   },
   mutations: {
     nextGame(state) {
