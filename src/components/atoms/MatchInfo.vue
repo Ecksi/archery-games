@@ -25,11 +25,6 @@
         type: String,
         default: 'Away Team'
       }
-    },
-    mounted: {
-      test() {
-        console.log('sup', this.startTime)
-      }
     }
   }
 </script>
@@ -37,12 +32,14 @@
 <style scoped>
   .time {
     font-size: 32px;
+    text-align: center;
   }
 
   .match {
     display: flex;
     justify-content: center;
     margin: 16px 0;
+    text-align: center;
   }
 
   /* pull team color, create gradient off that */

@@ -25,7 +25,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .schedule {
     margin: 16px;
   }

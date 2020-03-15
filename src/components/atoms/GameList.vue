@@ -21,7 +21,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .round {
     margin-bottom: 16px;
     text-align: center;
