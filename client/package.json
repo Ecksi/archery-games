@@ -4,10 +4,12 @@
   "author": "Jim Ecksi <jimecksi@gmail.com> (https://github.com/Ecksi)",
   "private": true,
   "scripts": {
+    "reinstall": "rm -rf dist node_modules out package-lock.json && npm i",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "test:watch": "vue-cli-service test:unit --watch"
   },
   "dependencies": {
     "core-js": "^3.6.4",
