@@ -3,3 +3,10 @@
 ### A small application to make life easier for the folks over at https://archerygamesdenver.com/
 
 ### This application will allow for easier team management, creation, and match tracking for their league sessions.
+
+## Setup
+ `npm i` - install packages
+
+ `npm run serve` - start app
+
+ `npm run test:unit` - run unit-tests
