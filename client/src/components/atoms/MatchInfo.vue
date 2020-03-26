@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h2 class="time">{{ startTime }}</h2>
-    <section class="match bg-color">
-      <h2 class="team-a">{{ homeTeam }}</h2>
-      <img src="../../assets/img/versus.png" alt="" height=50 width=50>
-      <h2 class="team-a">{{ awayTeam }}</h2>
+    <h2 class="text-center text-4xl">{{ startTime }}</h2>
+    <section class="flex justify-center my-4 mx-0 text-center">
+      <h2 class="w-32 h-full p-6 text-3xl leading-none cursor-pointer border-solid border-2 border-red-300">{{ homeTeam }}</h2>
+      <img class="my-auto mx-4" src="../../assets/img/versus.png" alt="" height=50 width=50>
+      <h2 class="w-32 h-full p-6 text-3xl leading-none cursor-pointer border-solid border-2 border-blue-500">{{ awayTeam }}</h2>
     </section>
   </div>
 </template>
@@ -30,37 +30,8 @@
 </script>
 
 <style scoped>
-  .time {
-    font-size: 32px;
-    text-align: center;
-  }
-
-  .match {
-    display: flex;
-    justify-content: center;
-    margin: 16px 0;
-    text-align: center;
-  }
-
   /* pull team color, create gradient off that */
   .bg-color {
     background-color: rgba(135, 206, 250, 0.5);
-  }
-
-  section h2 {
-    width: 125px;
-    font-size: 28px;
-    line-height: 1;
-  }
-
-  section img {
-    margin: auto 16px;
-  }
-
-  .team-a, .team-b {
-    border: 1px solid red;
-    height: 100%;
-    padding: 24px;
-    cursor: pointer;
   }
 </style>
