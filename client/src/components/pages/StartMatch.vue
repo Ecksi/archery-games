@@ -1,9 +1,9 @@
 <template>
-  <div class="start">
+  <div class="start flex flex-col justify-between">
     <modal v-if="popUp" @close="popUp=false"/>
-    <team-score class="flex-one" />
-    <award-points class="flex-one" @awardWinner="popUp=true" />
-    <game-list class="flex-one translate-y" />
+    <team-score class="flex-1" />
+    <award-points class="flex-1" @awardWinner="popUp=true" />
+    <game-list class="flex-1 translate-y" />
     <match-timer @awardWinner="popUp=true" />
   </div>
 </template>
@@ -34,14 +34,7 @@
 
 <style>
   .start {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     height: calc(100vh - 129px);
-  }
-
-  .flex-one {
-    flex: 1;
   }
 
   .translate-y {
