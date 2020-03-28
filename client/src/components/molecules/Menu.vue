@@ -1,11 +1,3 @@
-<template>
-  <div>
-    <section v-for="(menu, index) in isAdmin ? admin : user" :key="index" @click="$emit('changeRoute', menu.route)">
-      <menu-option :asset="menu.img">{{ menu.text }}</menu-option>
-    </section>
-  </div>
-</template>
-
 <script>
   import MenuOption from '../atoms/MenuOption';
   
@@ -40,5 +32,13 @@
         ]
       }
     }
-  }
+  };
 </script>
+
+<template>
+  <div>
+    <section v-for="(menu, index) in isAdmin ? admin : user" :key="index" @click="$emit('changeRoute', menu.route)">
+      <menu-option :asset="menu.img">{{ menu.text }}</menu-option>
+    </section>
+  </div>
+</template>

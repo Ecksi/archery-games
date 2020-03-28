@@ -1,13 +1,3 @@
-<template>
-  <div class="start flex flex-col justify-between">
-    <modal v-if="popUp" @close="popUp=false"/>
-    <team-score class="flex-1" />
-    <award-points class="flex-1" @awardWinner="popUp=true" />
-    <game-list class="flex-1 translate-y" />
-    <match-timer @awardWinner="popUp=true" />
-  </div>
-</template>
-
 <script>
   import TeamScore from '@/components/atoms/TeamScore';
   import AwardPoints from  '@/components/atoms/AwardPoints';
@@ -29,8 +19,18 @@
         popUp: false,
       }
     }
-  }
+  };
 </script>
+
+<template>
+  <div class="start flex flex-col justify-between">
+    <modal v-if="popUp" @close="popUp=false"/>
+    <team-score class="flex-1" />
+    <award-points class="flex-1" @awardWinner="popUp=true" />
+    <game-list class="flex-1 translate-y" />
+    <match-timer @awardWinner="popUp=true" />
+  </div>
+</template>
 
 <style>
   .start {

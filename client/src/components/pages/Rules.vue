@@ -1,3 +1,23 @@
+<script>
+  export default {
+    name: 'Rules',
+    data() {
+      return {
+        show: false,
+        oneOpen: false
+      }
+    },
+    methods: {
+      transi() {
+        if (this.oneOpen) {
+          // closeOpenedMenu
+        }
+        this.show = !this.show;
+      }
+    }
+  };
+</script>
+
 <template>
   <div>
     <h2>League Rules</h2>
@@ -124,26 +144,6 @@
     </ul>
   </div>  
 </template>
-
-<script>
-  export default {
-    name: 'Rules',
-    data() {
-      return {
-        show: false,
-        oneOpen: false
-      }
-    },
-    methods: {
-      transi() {
-        if (this.oneOpen) {
-          // closeOpenedMenu
-        }
-        this.show = !this.show;
-      }
-    }
-  }
-</script>
 
 <style>
   h2 {

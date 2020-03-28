@@ -1,3 +1,17 @@
+<script>
+  import MatchInfo from '@/components/atoms/MatchInfo';
+  
+  export default {
+    name: 'Schedule',
+    components: {
+      MatchInfo
+    },
+    data: () => ({
+      startTimes: ['6:30', '7:30', '8:30']
+    })
+  };
+</script>
+
 <template>
   <div class="m-4">
     <div class="text-center">
@@ -10,17 +24,3 @@
     </div>
   </div>
 </template>
-
-<script>
-  import MatchInfo from '@/components/atoms/MatchInfo';
-  
-  export default {
-    name: 'Schedule',
-    components: {
-      MatchInfo
-    },
-    data: () => ({
-      startTimes: ['6:30', '7:30', '8:30']
-    })
-  }
-</script>

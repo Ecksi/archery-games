@@ -1,3 +1,16 @@
+<script>
+  import { mapState } from 'vuex';
+
+  export default {
+    name: 'Teams',
+    computed: {
+      ...mapState({
+        teams: (state) => state.teams
+      })
+    }
+  };
+</script>
+
 <template>
   <div class="my-0 mx-4">
     <header class="mb-6">
@@ -24,19 +37,6 @@
     </section>
   </div>
 </template>
-
-<script>
-  import { mapState } from 'vuex';
-
-  export default {
-    name: 'Teams',
-    computed: {
-      ...mapState({
-        teams: (state) => state.teams
-      })
-    }
-  }
-</script>
 
 <style scoped>
   .table-teams {

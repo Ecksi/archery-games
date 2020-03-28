@@ -1,14 +1,3 @@
-<template>
-  <div>
-    <h2 class="text-center text-4xl">{{ startTime }}</h2>
-    <section class="flex justify-center my-4 mx-0 text-center">
-      <h2 class="w-32 h-full p-6 text-3xl leading-none cursor-pointer border-solid border-2 border-red-300">{{ homeTeam }}</h2>
-      <img class="my-auto mx-4" src="../../assets/img/versus.png" alt="" height=50 width=50>
-      <h2 class="w-32 h-full p-6 text-3xl leading-none cursor-pointer border-solid border-2 border-blue-500">{{ awayTeam }}</h2>
-    </section>
-  </div>
-</template>
-
 <script>
   export default {
     name: 'MatchInfo',
@@ -26,8 +15,19 @@
         default: 'Away Team'
       }
     }
-  }
+  };
 </script>
+
+<template>
+  <div>
+    <h2 class="text-center text-4xl">{{ startTime }}</h2>
+    <section class="flex justify-center my-4 mx-0 text-center">
+      <h2 class="w-32 h-full p-6 text-3xl leading-none cursor-pointer border-solid border-2 border-red-300">{{ homeTeam }}</h2>
+      <img class="my-auto mx-4" src="../../assets/img/versus.png" alt="" height=50 width=50>
+      <h2 class="w-32 h-full p-6 text-3xl leading-none cursor-pointer border-solid border-2 border-blue-500">{{ awayTeam }}</h2>
+    </section>
+  </div>
+</template>
 
 <style scoped>
   /* pull team color, create gradient off that */

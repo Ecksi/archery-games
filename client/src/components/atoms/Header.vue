@@ -1,3 +1,9 @@
+<script>
+  export default {
+    name: 'Header'
+  };
+</script>
+
 <template>
   <header class="flex justify-between mb-4 pb-4 border-solid border-gray-800 border-b-2">
     <a href="https://archerygamesdenver.com/">
@@ -14,12 +20,6 @@
     </a>
   </header>
 </template>
-
-<script>
-  export default {
-    name: 'Header'
-  }
-</script>
 
 <style scoped>
   a, a:visited {

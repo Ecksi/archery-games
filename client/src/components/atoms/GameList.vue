@@ -1,3 +1,14 @@
+<script>
+  import { mapMutations } from 'vuex';
+
+  export default {
+    name: 'GameList',
+    methods: {
+      ...mapMutations(['nextGame', 'previousGame'])
+    }
+  };
+</script>
+
 <template>
   <div>
     <h3 class="mb-4 text-center" v-if="$store.state.match.round === 10">- Bonus Round -</h3>
@@ -9,17 +20,6 @@
     </div>
   </div>
 </template>
-
-<script>
-  import { mapMutations } from 'vuex';
-
-  export default {
-    name: 'GameList',
-    methods: {
-      ...mapMutations(['nextGame', 'previousGame'])
-    }
-  }
-</script>
 
 <style scoped>
   .current-game {

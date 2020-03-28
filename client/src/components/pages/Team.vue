@@ -1,3 +1,16 @@
+<script>
+  export default {
+    name: 'Team',
+    props: {
+      team: {
+        type: Object,
+        defaut: {},
+        required: true
+      }
+    }
+  };
+</script>
+
 <template>
   <div class="my-0 mx-4">
     <h1>{{ team.name }}</h1>
@@ -10,16 +23,3 @@
     </section>
   </div>
 </template>
-
-<script>
-  export default {
-    name: 'Team',
-    props: {
-      team: {
-        type: Object,
-        defaut: {},
-        required: true
-      }
-    }
-  }
-</script>

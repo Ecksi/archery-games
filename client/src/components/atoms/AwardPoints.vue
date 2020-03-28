@@ -1,3 +1,9 @@
+<script>
+  export default {
+    name: 'AwardPoints'
+  };
+</script>
+
 <template>
   <div class="mt-4 text-center">
     <h2>Award Winner</h2>
@@ -6,9 +12,3 @@
     </section>
   </div>
 </template>
-
-<script>
-  export default {
-    name: 'AwardPoints'
-  }
-</script>

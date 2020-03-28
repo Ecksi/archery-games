@@ -1,12 +1,3 @@
-<template>
-  <div>
-    <router-link to="/">
-      <ag-header>Denver</ag-header>
-    </router-link>
-    <router-view />
-  </div>
-</template>
-
 <script>
   import AgHeader from '@/components/atoms/Header';
   
@@ -17,6 +8,15 @@
     }
   };
 </script>
+
+<template>
+  <div>
+    <router-link to="/">
+      <ag-header>Denver</ag-header>
+    </router-link>
+    <router-view />
+  </div>
+</template>
 
 <style>
   :root {

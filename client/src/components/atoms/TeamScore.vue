@@ -1,3 +1,9 @@
+<script>
+  export default {
+    name: 'TeamScore'
+  };
+</script>
+
 <template>
   <div class="flex justify-around py-0 px-4 text-center">
     <section class="w-full pr-4">
@@ -12,12 +18,6 @@
     </section>
   </div>
 </template>
-
-<script>
-  export default {
-    name: 'TeamScore'
-  }
-</script>
 
 <style scoped>
   .center-name {
