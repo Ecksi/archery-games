@@ -1,9 +1,9 @@
 <template>
   <main>
     <router-link :to="route">
-      <ag-menu :isAdmin="toggleAdmin" @changeRoute="route=`/${$event}`" class="main" />
+      <ag-menu :isAdmin="toggleAdmin" @changeRoute="route=`/${$event}`" class="h-full my-0 mx-1" />
     </router-link>
-    <button @click="toggleAdmin = !toggleAdmin" class="toggle">Admin Toggle</button>
+    <button @click="toggleAdmin = !toggleAdmin" class="h12 w-48 ml-16">Admin Toggle</button>
   </main>
 </template>
 
@@ -21,16 +21,3 @@
     }
   };
 </script>
-
-<style scoped>
-  .main {
-    height: 100%;
-    margin: 0.25rem;
-  }
-
-  .toggle {
-    margin-left: 4rem;
-    height: 50px;
-    width: 200px;
-  }
-</style>
