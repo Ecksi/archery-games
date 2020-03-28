@@ -1,12 +1,12 @@
 <template>
-  <div class="players-page">
-    <header>
+  <div class="my-0 mx-4">
+    <header class="mb-6 text-center">
       <h1>Player Roster</h1>  
       <h3>April 2020 League</h3>
     </header>
-    <section v-for="(player, index) in players" :key="index" class="player" @click="$emit('playerPage', player.name)">
-      <img :src="require(`../../assets/avatars/avatar-${index}.svg`)" alt="" height="50">
-        <h3 class="player-name">{{ player.name }}</h3>
+    <section class="flex justify-center mb-4 cursor-pointer" v-for="(player, index) in players" :key="index" @click="$emit('playerPage', player.name)">
+      <img class="mr-6" :src="require(`../../assets/avatars/avatar-${index}.svg`)" alt="" height="50">
+        <h3 class="w-48">{{ player.name }}</h3>
     </section>
   </div>
 </template>
@@ -23,33 +23,3 @@
     }
   }
 </script>
-
-<style scoped>
-  .players-page {
-    margin: 0 16px; 
-  }
-
-  header {
-    margin-bottom: 24px;
-    text-align: center;
-  }
-
-  .table-points {
-    margin-right: 24px;
-  }
-  
-  .player {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 16px;
-    cursor: pointer;
-  }
-
-  .player img {
-    margin-right: 24px;
-  }
-
-  .player-name {
-    width: 175px;
-  }
-</style>
