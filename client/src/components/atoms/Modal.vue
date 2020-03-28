@@ -1,14 +1,14 @@
 <template>
-  <div class="modal">
-    <div class="close" @click="$emit('close')">X</div>
-    <h1>I am your Modal</h1>
+  <div class="modal absolute bg-white text-center border border-solid border-green-200">
+    <div class="close relative cursor-pointer" @click="$emit('close')">X</div>
+    <h1 class="my-3 mx-0">I am your Modal</h1>
     <h3>Who won this match?</h3>
-    <div class="teams">
-      <section class="home-team" @click="updateScore('home')">
+    <div class="flex justify-center mt-4">
+      <section class="mr-3 ml-2 border border-solid border-black cursor-pointer" @click="updateScore('home')">
         <h2>Home Team</h2>
         <img src="../../assets/avatars/avatar-11.svg" alt="" height="50">
       </section>
-      <section class="away-team" @click="updateScore('away')">
+      <section class="mr-2 ml-3 border border-solid border-black cursor-pointer" @click="updateScore('away')">
         <h2>Away Team</h2>
         <img src="../../assets/avatars/avatar-13.svg" alt="" height="50">
       </section>
@@ -45,45 +45,14 @@
 
 <style scoped>
   .modal {
-    position: absolute;
     top: 200px;
     left: calc((100vw - 250px) / 2);
     height: 300px;
     width: 250px;
-    border: 1px solid greenyellow;
-    background-color: white;
-    text-align: center;
   }
 
   .close {
-    position: relative;
     top: 8px;
     left: 112px;
-    cursor: pointer;
-  }
-  
-  h1 {
-    margin: 12px 0;
-  }
-
-  .teams {
-    display: flex;
-    justify-content: center;
-    margin-top: 16px;
-  }
-
-  .home-team, .away-team {
-    cursor: pointer;
-    border: 1px solid black;
-  }
-
-  .home-team {
-    margin-right: 12px;
-    margin-left: 8px;
-  }
-
-  .away-team {
-    margin-left: 12px;
-    margin-right: 8px;
   }
 </style>
