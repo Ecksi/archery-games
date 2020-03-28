@@ -1,7 +1,7 @@
 <template>
-	<section>
+	<section class="flex p-6 cursor-pointer">
 		<img :src="require(`../../assets/menus/${asset}.svg`)" alt="Start icon" width="50">
-		<h3><slot></slot></h3>
+		<h3 class="text-center text-3xl ml-12"><slot></slot></h3>
 	</section>
 </template>
 
@@ -19,19 +19,7 @@
 </script>
 
 <style scoped>
-  section {
-    display: flex;
-    padding: 1.5rem;
-		cursor: pointer;
-  }
-
 	section:hover {
 		background-color: rgba(144, 238, 144, 0.2);
 	}
-
-	section h3 {
-    align-self: center;
-    font-size: 28px;
-    margin-left: 3rem;
-  }
 </style>
