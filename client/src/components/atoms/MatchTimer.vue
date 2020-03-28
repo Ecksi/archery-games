@@ -1,7 +1,7 @@
 <template>
-  <button class="start-button" @click="toggleTimer">
-    <span v-if="!$store.state.match.isStarted && !$store.state.match.status">Start</span>
-    <span v-else>{{ $store.state.match.status === 'active' ? `Pause - ${duration = $store.state.match.duration}` : `Resume - ${duration = $store.state.match.duration}` }}</span>
+  <button class="start-button w-full text-white text-2xl font-bold border-none cursor-pointer outline-none" @click="toggleTimer">
+    <span class="w-full inline-block" v-if="!$store.state.match.isStarted && !$store.state.match.status">Start</span>
+    <span class="w-full inline-block" v-else>{{ $store.state.match.status === 'active' ? `Pause - ${duration = $store.state.match.duration}` : `Resume - ${duration = $store.state.match.duration}` }}</span>
   </button>
 </template>
 
@@ -24,23 +24,14 @@
   }
 </script>
 
-<style>
+<style scoped>
   .start-button {
-    width: 100%;
     height: 70px;
     background-color: #009B4C;
-    border: none;
-    outline: none;
-    font-size: 24px;
-    font-weight: bold;
-    color: #FFF;
     letter-spacing: 2px;
-    cursor: pointer;
   }
 
   .start-button span {
-    display: inline-block;
-    width: 100%;
     filter: drop-shadow(0 2px 1px rgb(58, 58, 58));
   }
 </style>
