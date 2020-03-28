@@ -11,10 +11,10 @@
 
 <template>
   <div class="border border-solid border-gray-500">
-    <div class="w-1/3 flex justify-between py-4 cursor-pointer" @click="isOpen=!isOpen">
-      <h2><slot name="name" /></h2>
-      <p v-if="isOpen">+</p>
-      <p v-else>-</p>
+    <div class="flex justify-between p-4 cursor-pointer" @click="isOpen=!isOpen">
+      <h2><slot name="headline" /></h2>
+      <p v-if="isOpen">-</p>
+      <p v-else>+</p>
     </div>
     <transition name="slide">
       <div 
@@ -22,7 +22,7 @@
         class="px-4"
         :style="{
           display: isOpen ? 'block' : 'none',
-          maxHeight: isOpen ? '150px' : 0,
+          maxHeight: isOpen ? 'auto' : 0,
           paddingBottom: isOpen ? '16px' : 0
         }"
       >
