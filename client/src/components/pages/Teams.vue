@@ -1,17 +1,17 @@
 <template>
-  <div class="teams-page">
-    <header>
+  <div class="my-0 mx-4">
+    <header class="mb-6">
       <h1>Team Roster</h1>  
       <h3>April 2020 League</h3>
     </header>
-    <section class="table-header">
+    <section class="flex justify-between mb-3">
       <h3 class="table-teams">Team</h3>
-      <h3 class="table-points">Points</h3>
+      <h3 class="mr-6">Points</h3>
     </section>
     <section v-for="(team, index) in teams" :key="index">
-      <router-link :to="{ name: 'Team', params: {team: team}}" class="team">
-        <img :src="require(`../../assets/avatars/avatar-${index}.svg`)" alt="" height="50">
-        <section class="team-info">
+      <router-link :to="{ name: 'Team', params: {team: team}}" class="flex mb-4 cursor-pointer text-black no-underline">
+        <img class="mr-6" :src="require(`../../assets/avatars/avatar-${index}.svg`)" alt="A random avatar image" height="50">
+        <section class="flex justify-between w-full mr-8">
           <div>
             <h3>{{ team.name }}</h3>
             <h4>{{ team.color }}</h4>
@@ -39,48 +39,11 @@
 </script>
 
 <style scoped>
-  .teams-page {
-    margin: 0 16px; 
-  }
-
-  header {
-    margin-bottom: 24px;
-  }
-
-  .table-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 12px;
-  }
-
   .table-teams {
     margin-left: 72px;
-  }
-
-  .table-points {
-    margin-right: 24px;
-  }
-  
-  .team {
-    display: flex;
-    margin-bottom: 16px;
-    cursor: pointer;
-    text-decoration: none;
-    color: black;
   }
   
   .team:hover {
     background-color: rgba(115, 115, 115, 0.3);
-  }
-
-  .team img {
-    margin-right: 24px;
-  }
-
-  .team-info {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-right: 32px;
   }
 </style>
