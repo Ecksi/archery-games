@@ -23,7 +23,7 @@
     </section>
     <section v-for="(team, index) in teams" :key="index">
       <router-link :to="{ name: 'Team', params: {team: team}}" class="flex mb-4 cursor-pointer text-black no-underline">
-        <img class="mr-6" :src="require(`../../assets/avatars/avatar-${index}.svg`)" alt="A random avatar image" height="50">
+        <img class="mr-6 h-10" :src="require(`../../assets/avatars/avatar-${index}.svg`)" alt="A random avatar image">
         <section class="flex justify-between w-full mr-8">
           <div>
             <h3>{{ team.name }}</h3>

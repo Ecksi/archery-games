@@ -18,7 +18,7 @@
       <h3>April 2020 League</h3>
     </header>
     <section class="flex justify-center mb-4 cursor-pointer" v-for="(player, index) in players" :key="index" @click="$emit('playerPage', player.name)">
-      <img class="mr-6" :src="require(`../../assets/avatars/avatar-${index}.svg`)" alt="" height="50">
+      <img class="mr-6 h-10" :src="require(`../../assets/avatars/avatar-${index}.svg`)" alt="A random avatar image">
         <h3 class="w-48">{{ player.name }}</h3>
     </section>
   </div>
