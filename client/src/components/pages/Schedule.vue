@@ -1,10 +1,10 @@
 <template>
-  <div class="schedule">
-    <div>
+  <div class="m-4">
+    <div class="text-center">
       <h2>March 20</h2>
       <h3>Week 7</h3>
     </div>
-    <hr />
+    <hr class="m-3" />
     <div v-for="(time, index) in startTimes" :key="index">
       <match-info :startTime="time" />
     </div>
@@ -24,17 +24,3 @@
     })
   }
 </script>
-
-<style scoped>
-  .schedule {
-    margin: 16px;
-  }
-
-  h2, h3 {
-    text-align: center;
-  }
-
-  hr {
-    margin: 12px;
-  }
-</style>
